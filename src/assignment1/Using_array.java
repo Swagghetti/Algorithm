@@ -21,6 +21,7 @@ public class Using_array {
     private int index;
     private TimeCounter timer;
 
+    int idx = 900_000;
     /**
      * @param filePointer
      * @param length
@@ -60,7 +61,7 @@ public class Using_array {
      * 
      *  
      */
-    public void read() throws FileNotFoundException{
+    public void read(int index) throws FileNotFoundException{
         Scanner reader = new Scanner(this.file);
 
         // A different time counter for 
@@ -88,7 +89,7 @@ public class Using_array {
                 this.statusInformations.put("e",this.timer.getElepsedTime());
                 this.statusInformations.put("e_value",(long)number);
 
-            }else if(this.index == 900000){
+            }else if(this.index == index){
                 // get time elepsed
                 this.timer.startTimer();
                 int number = Integer.parseInt(reader.nextLine());
@@ -122,8 +123,8 @@ public class Using_array {
     public void printStatus(){
         System.out.println("The integer array structure is built in "+ this.statusInformations.get("a") +" milliseconds.");
         System.out.println("An integer is inserted into the first index of the integer list in "+this.statusInformations.get("b")+" milliseconds.");
-        System.out.println("An integer is inserted into the 900,000th index of the integer list in "+this.statusInformations.get("c")+" milliseconds.");
-        System.out.println("An integer, which is "+this.statusInformations.get("d_value")+" , is read from the index 900,000 of the integer list in "+this.statusInformations.get("d")+" milliseconds.");
+        System.out.println("An integer is inserted into the  " + idx + "th index of the integer list in "+this.statusInformations.get("c")+" milliseconds.");
+        System.out.println("An integer, which is "+this.statusInformations.get("d_value")+" , is read from the index " + idx + " of the integer list in "+this.statusInformations.get("d")+" milliseconds.");
         System.out.println("An integer, which is "+this.statusInformations.get("e_value")+" , is read from the index 9 of the integer list in "+this.statusInformations.get("e")+" milliseconds.");
     }
     

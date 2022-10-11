@@ -10,6 +10,7 @@ public class DynamicArrayCustom
     private int size;
     private Map<String,Long> statusInformations;
     private TimeCounter timer;
+    int fileIndex = 900_000;
 
     public DynamicArrayCustom() // constructor without parameter
     {
@@ -96,8 +97,9 @@ public class DynamicArrayCustom
 
         if(!(index > count-1 || index < 0)){
             this.timer.stopTimer();
-            if(index == 900_000){
+            if(index == fileIndex){
                 this.statusInformations.put("d",this.timer.getElepsedTime());
+                
             }
             else if (index == 9){
                 this.statusInformations.put("e",this.timer.getElepsedTime());
@@ -111,8 +113,8 @@ public class DynamicArrayCustom
     public void printStatus(){
         System.out.println("The integer dynamic array structure is built in "+ this.statusInformations.get("a") +" milliseconds.");
         System.out.println("An integer is inserted into the first index of the dynamic array in "+this.statusInformations.get("b")+" milliseconds.");
-        System.out.println("An integer is inserted into the 900,000th index of the dynamic array in "+this.statusInformations.get("c")+" milliseconds.");
-        System.out.println("An integer, which is "+this.getAtIndex(900000)+" , is read from the index 900,000 of the dynamic array in "+this.statusInformations.get("d")+" milliseconds.");
+        System.out.println("An integer is inserted into the  " + fileIndex + "th index of the dynamic array in "+this.statusInformations.get("c")+" milliseconds.");
+        System.out.println("An integer, which is "+array[fileIndex]+" , is read from the index  " + fileIndex + "  of the dynamic array in "+this.statusInformations.get("d")+" milliseconds.");
         System.out.println("An integer, which is "+this.getAtIndex(9)+" , is read from the index 9 of the dynamic array in "+this.statusInformations.get("e")+" milliseconds.");
     }
 }
