@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package assignment1;
 
 /**
@@ -25,26 +29,22 @@ public class LinkedList {
     // Method to insert a new node 
     public static LinkedList insert(LinkedList list, int data) 
     { 
-        // Create a new node with given data 
-        Node newNode = new Node(data); 
-         
-   
-        // If the Linked List is empty, then make the new node as head 
-        if (list.head == null) { 
-            list.head = newNode; 
-        } 
-        else { 
-            // Else traverse till the last node and insert the new_node there 
-            Node last = list.head; 
-            while (last.next != null) { 
-                last = last.next; 
-            } 
-            // Insert the new_node at last node 
-            last.next = newNode; 
-        } 
-   
-        // Return the list by head 
-        return list; 
+        Node newHead = new Node(data);
+
+        if (list.head == null){
+            //list is empty
+            list.head = newHead;
+
+        }
+        else{
+            //list is full
+            //Make next of new Node as head 
+            newHead.next = list.head;
+            //Move the head to point to new Node
+            list.head = newHead;            
+        }
+        //return the list with head
+        return list;
     } 
    
     //This function is in LinkedList class. Inserts a new Node at front of the list.
@@ -87,26 +87,6 @@ public class LinkedList {
         return list;
     }
     
-    
-    
-    
-    // Method to print the LinkedList. 
-    public static void printList(LinkedList list) 
-    { 
-        Node currNode = list.head; 
-    
-        System.out.print("\nLinkedList: "); 
-    
-        // Traverse through the LinkedList 
-        while (currNode != null) { 
-            // Print the data at current node 
-            System.out.print(currNode.data + " "); 
-    
-            // Go to next node 
-            currNode = currNode.next; 
-        } 
-    } 
-    
     public static Node readAtPos(LinkedList list, int position) {
         
         Node head = list.head;
@@ -130,6 +110,23 @@ public class LinkedList {
             return temp.next;          
         }
     }
+    
+        // Method to print the LinkedList. 
+    public static void printList(LinkedList list) 
+    { 
+        Node currNode = list.head; 
+    
+        System.out.print("\nLinkedList: "); 
+    
+        // Traverse through the LinkedList 
+        while (currNode != null) { 
+            // Print the data at current node 
+            System.out.print(currNode.data + " "); 
+    
+            // Go to next node 
+            currNode = currNode.next; 
+        } 
+    } 
     
     
 }

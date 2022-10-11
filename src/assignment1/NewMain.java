@@ -23,8 +23,9 @@ public class NewMain {
         array1.printStatus();
         System.out.println();
         
-        PA2 A2 = new PA2();
-        A2.printStatus();
+        PA1 A = new PA1(new File("1Mint.txt"));
+                
+        A.builtList1();
         
         System.out.println();
         DynamicArrayCustom dymArray1 = new DynamicArrayCustom(array1.array);
@@ -42,8 +43,9 @@ System.out.println();
         array2.printStatus();
         System.out.println();
         
-        PA2 A22 = new PA2();
-        A22.printStatus();
+        PA1 A2 = new PA1(new File("50Mint.txt"));
+        
+        A2.builtList2();
 
         System.out.println();
         DynamicArrayCustom dymArray2 = new DynamicArrayCustom(array2.array);
