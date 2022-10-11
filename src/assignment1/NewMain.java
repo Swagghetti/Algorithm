@@ -30,8 +30,8 @@ public class NewMain {
         System.out.println();
         DynamicArrayCustom dymArray1 = new DynamicArrayCustom(array1.array);
         dymArray1.insertFirst(45);
-        
         dymArray1.getAtIndex(9);
+        dymArray1.getAtIndex(900_000);
         dymArray1.printStatus();
 
 System.out.println();
@@ -51,6 +51,8 @@ System.out.println();
         DynamicArrayCustom dymArray2 = new DynamicArrayCustom(array2.array);
         dymArray2.fileIndex = 45_000_000;
         dymArray2.insertFirst(45);
+        dymArray1.getAtIndex(9);
+        dymArray1.getAtIndex(45_000_000);
         dymArray2.printStatus();
         
     }
