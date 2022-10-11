@@ -24,7 +24,6 @@ public class NewMain {
         System.out.println();
         
         PA2 A2 = new PA2();
-       
         A2.printStatus();
         
         System.out.println();
@@ -44,7 +43,6 @@ System.out.println();
         System.out.println();
         
         PA2 A22 = new PA2();
-        A22.idx = 45_000_000;
         A22.printStatus();
 
         System.out.println();
